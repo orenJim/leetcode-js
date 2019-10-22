@@ -12,11 +12,11 @@ const twoSum = (nums, target) => {
   // memo will keep track of complementary numbers
   const memo = {};
   for (let i = 0; i < nums.length; i += 1) {
-    const complement = target - array[i];
+    const complement = target - nums[i];
     // if the memo object has the complement, return the value and current index
-    if (memo.hasOwnProperty(complement)) return [memo[complement], i];
+    if (memo[complement]) return [memo[complement], i];
     // else, store in memo the current number and its index
-    memo[array[i]] = i;
+    memo[nums[i]] = i;
   }
   // return string if none are found
   return 'None found';
