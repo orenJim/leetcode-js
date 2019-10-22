@@ -4,7 +4,7 @@
   "description": "leetcode algorithms in javascript",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "node test.js"
   },
   "version": "1.0.0",
   "license": "ISC",
