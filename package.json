@@ -1,11 +1,11 @@
 {
   "name": "leetcode",
-  "version": "1.0.0",
-  "description": "",
+  "author": "Jim Yoon <jimyoon90@gmail.com> (https://github.com/orenJim)",
+  "description": "leetcode algorithms in javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
-  "author": "",
+  "version": "1.0.0",
   "license": "ISC"
 }
