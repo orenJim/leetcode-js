@@ -14,7 +14,7 @@ const twoSum = (nums, target) => {
   for (let i = 0; i < nums.length; i += 1) {
     const complement = target - nums[i];
     // if the memo object has the complement, return the value and current index
-    if (memo[complement]) return [memo[complement], i];
+    if (memo[complement] !== undefined) return [memo[complement], i];
     // else, store in memo the current number and its index
     memo[nums[i]] = i;
   }
