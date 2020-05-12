@@ -7,7 +7,7 @@
  * @return {number}
  */
 
-const reverse = (integer) => {
+const reverseInteger = (integer) => {
   // limit of 32 bit
   const limit = 2147483648;
   // check if number is negative or not, then store -1 or 1
