@@ -1,8 +1,8 @@
 {
-  "name": "leetcode",
+  "name": "leetcode-js",
   "author": "Jim Yoon <jimyoon90@gmail.com> (https://github.com/orenJim)",
   "description": "leetcode algorithms in javascript",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "node test.js"
   },
