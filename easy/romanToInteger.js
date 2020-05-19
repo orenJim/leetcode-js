@@ -29,40 +29,12 @@ const romanToInt = (romanNum) => {
   let integer = 0;
   // loop through string to get values
   for (let i = 0; i < romanNum.length; i += 1) {
-    // conditionals for 4, 9, 40, 90, 400, and 900
-    if (romanNum[i] === 'I') {
-      if (romanNum[i + 1] === 'V') {
-        integer += 4;
-        i += 1;
-      } else if (romanNum[i + 1] === 'X') {
-        integer += 9;
-        i += 1;
-      } else {
-        integer += 1;
-      }
-    } else if (romanNum[i] === 'X') {
-      if (romanNum[i + 1] === 'L') {
-        integer += 40;
-        i += 1;
-      } else if (romanNum[i + 1] === 'C') {
-        integer += 90;
-        i += 1;
-      } else {
-        integer += 10;
-      }
-    } else if (romanNum[i] === 'C') {
-      if (romanNum[i + 1] === 'D') {
-        integer += 400;
-        i += 1;
-      } else if (romanNum[i + 1] === 'M') {
-        integer += 900;
-        i += 1;
-      } else {
-        integer += 100;
-      }
-    } else {
-      integer += romanNumerals[romanNum[i]];
-    }
+    // get the current and next "digit"
+    const currentDigit = romanNum[i];
+    const nextDigit = romanNum[i + 1];
+    // if the current has a smaller value than the next, then it means to subtract
+    if (romanNumerals[currentDigit] < romanNumerals[nextDigit]) integer -= romanNumerals[currentDigit];
+    else integer += romanNumerals[currentDigit];
   }
   return integer;
 };
