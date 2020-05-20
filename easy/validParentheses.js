@@ -6,27 +6,23 @@
 // Note that an empty string is also considered valid.
 
 /**
- * @param {string} s
+ * @param {string} string
  * @return {boolean}
  */
 
 const validParentheses = (string) => {
   // return early if length is 0
   if (string.length === 0) return true;
-  // fail early if length is 1
-  if (string.length === 1) return false;
+  // fail early if odd number of parens
+  if (string.length % 2 !== 0) return false;
   // keep track of opening and closing with push and pop
-  // only left sides in track array
-  const track = [];
+  // only left sides in stack array
+  const stack = [];
   for (let i = 0; i < string.length; i += 1) {
-    const lastTrack = track.length - 1;
-    if (string[i] === '(' || string[i] === '{' || string[i] === '[') track.push(string[i]);
-    if (string[i] === ')' || string[i] === '}' || string[i] === ']') {
-      if (string[i] === ')' && track[lastTrack] === '(') track.pop();
-      else if (string[i] === '}' && track[lastTrack] === '{') track.pop();
-      else if (string[i] === ']' && track[lastTrack] === '[') track.pop();
-      else return false;
-    }
+    if (string[i] === '(') stack.push(')');
+    else if (string[i] === '{') stack.push('}');
+    else if (string[i] === '[') stack.push(']');
+    else if (string[i] !== stack.pop()) return false;
   }
-  return track.length === 0;
+  return stack.length === 0;
 };
