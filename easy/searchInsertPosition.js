@@ -4,7 +4,7 @@
 
 /**
  * @param {number[]} nums
- * @param {number} target
+ * @param {number} numsToInsert
  * @return {number}
  */
 
